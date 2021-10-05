@@ -4,6 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' http://127.0.0.1:5500;
+               style-src-elem 'self' data: https://unicons.iconscout.com/release/v3.0.6/css/line.css https://fonts.googleapis.com;
+               font-src 'self' data: https://fonts.gstatic.com https://unicons.iconscout.com/;
+               img-src 'self';
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unicons.iconscout.com/;
+               script-src 'self' 'unsafe-inline' 'unsafe-eval';"
+    />
     <link
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v3.0.6/css/line.css"
@@ -16,7 +25,6 @@
     <header class="header" id="header">
       <nav class="nav container">
         <a href="#home" class="nav__logo">Vitor</a>
-
         <div class="nav__menu" id="nav-menu">
           <ul class="nav__list grid">
             <li class="nav__item">
