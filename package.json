@@ -1,0 +1,16 @@
+{
+  "packageManager": "yarn@3.0.2",
+  "name": "yarn",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/vitorgaletti/personal-porfolio.git",
+  "author": "vitorgaletti <vitor.fgaletti@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "yarn live-server"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "live-server": "^1.2.1"
+  }
+}
