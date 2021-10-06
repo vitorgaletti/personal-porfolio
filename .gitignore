@@ -1,5 +1,6 @@
-.yarn
 node_modules/
-.yarnrc.yml
+.yarn
+.editorconfig
+.eslintignore
+.prettierrc
 .eslintrc.json
-yarn.lock

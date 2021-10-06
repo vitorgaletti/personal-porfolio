@@ -1,23 +1,22 @@
 /* MENU SHOW OR HIDDEN */
-const navMenu = document.getElementById('nav-menu'),
-  navToggle = document.getElementById('nav-toggle'),
-  navClose = document.getElementById('nav-close');
+const navMenu = document.getElementById('nav-menu');
+const navToggle = document.getElementById('nav-toggle');
+const navClose = document.getElementById('nav-close');
 const navLink = document.querySelectorAll('.nav__link');
-const skillsContent = document.getElementsByClassName('skills__content'),
-  skillsHeader = document.querySelectorAll('.skills__header');
-const tabs = document.querySelectorAll('[data-target]'),
-  tabsContent = document.querySelectorAll('[data-content]');
+const skillsContent = document.getElementsByClassName('skills__content');
+const skillsHeader = document.querySelectorAll('.skills__header');
+const tabs = document.querySelectorAll('[data-target]');
+const tabsContent = document.querySelectorAll('[data-content]');
 
-const modalViews = document.querySelectorAll('.services__modal'),
-  modalBtns = document.querySelectorAll('.services__button');
-modalCloses = document.querySelectorAll('.services__modal-close');
+const modalViews = document.querySelectorAll('.services__modal');
+const modalBtns = document.querySelectorAll('.services__button');
+const modalCloses = document.querySelectorAll('.services__modal-close');
 
 function start() {
   linkAction();
-  showSkill;
 }
 
-function linkAction() {
+const linkAction = function () {
   /* MENU SHOW */
   /* Validate if constant exists */
   if (navToggle) {
@@ -35,14 +34,14 @@ function linkAction() {
   }
   /* REMOVE MENU MOBILE */
   navMenu.classList.remove('show-menu');
-  navLink.forEach((n) => n.addEventListener('click', linkAction));
-}
+  navLink.forEach(n => n.addEventListener('click', linkAction));
+};
 
 /* ACCORDION SKILLS */
 function toggleSkills() {
-  let itemClass = this.parentNode.className;
+  const itemClass = this.parentNode.className;
 
-  for (i = 0; i < skillsContent.length; i++) {
+  for (let i = 0; i < skillsContent.length; i++) {
     skillsContent[i].className = 'skills__content skills__close';
   }
 
@@ -51,23 +50,23 @@ function toggleSkills() {
   }
 }
 
-const showSkill = skillsHeader.forEach((el) => {
+skillsHeader.forEach(el => {
   el.addEventListener('click', toggleSkills);
 });
 
 /* QUALIFICATION TABS */
-tabs.forEach((tab) => {
+tabs.forEach(tab => {
   tab.addEventListener('click', () => {
     const target = document.querySelector(tab.dataset.target);
 
-    tabsContent.forEach((tabContent) => {
+    tabsContent.forEach(tabContent => {
       tabContent.classList.remove('qualification__active');
     });
 
     target.classList.add('qualification__active');
 
-    tabs.forEach((tab) => {
-      tab.classList.remove('qualification__active');
+    tabs.forEach(tabQualification => {
+      tabQualification.classList.remove('qualification__active');
     });
 
     tab.classList.add('qualification__active');
@@ -86,9 +85,9 @@ modalBtns.forEach((modalBtn, i) => {
   });
 });
 
-modalCloses.forEach((modalClose) => {
+modalCloses.forEach(modalClose => {
   modalClose.addEventListener('click', () => {
-    modalViews.forEach((modalView) => {
+    modalViews.forEach(modalView => {
       modalView.classList.remove('active-modal');
     });
   });
@@ -96,7 +95,7 @@ modalCloses.forEach((modalClose) => {
 
 /* PORTFOLIO SWIPER */
 
-let swiperPortfolio = new Swiper('.portfolio__container', {
+const swiperPortfolio = new Swiper('.portfolio__container', {
   cssMode: true,
   loop: true,
   navigation: {
@@ -110,7 +109,7 @@ let swiperPortfolio = new Swiper('.portfolio__container', {
 });
 
 /* TESTIMONIAL */
-let swiperTestimonial = new Swiper('.testimonial__container', {
+const swiperTestimonial = new Swiper('.testimonial__container', {
   loop: true,
   grabCursor: true,
   spaceBetween: 48,
@@ -132,18 +131,18 @@ const sections = document.querySelectorAll('section[id]');
 function scrollActive() {
   const scrollY = window.pageYOffset;
 
-  sections.forEach((current) => {
+  sections.forEach(current => {
     const sectionHeight = current.offsetHeight;
     const sectionTop = current.offsetTop - 50;
-    sectionId = current.getAttribute('id');
+    const sectionId = current.getAttribute('id');
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
       document
-        .querySelector('.nav__menu a[href*=' + sectionId + ']')
+        .querySelector(`.nav__menu a[href*=${sectionId}]`)
         .classList.add('active-link');
     } else {
       document
-        .querySelector('.nav__menu a[href*=' + sectionId + ']')
+        .querySelector(`.nav__menu a[href*=${sectionId}]`)
         .classList.remove('active-link');
     }
   });
@@ -153,6 +152,7 @@ window.addEventListener('scroll', scrollActive);
 /* CHANGE BACKGROUND HEADER */
 function scrollHeader() {
   const nav = document.getElementById('header');
+
   // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
   if (this.scrollY >= 80) nav.classList.add('scroll-header');
   else nav.classList.remove('scroll-header');
@@ -161,10 +161,11 @@ window.addEventListener('scroll', scrollHeader);
 
 /* SHOW SCROLL */
 function scrollUp() {
-  const scrollUp = document.getElementById('scroll-up');
+  const scrollup = document.getElementById('scroll-up');
+
   // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
-  if (this.scrollY >= 560) scrollUp.classList.add('show-scroll');
-  else scrollUp.classList.remove('show-scroll');
+  if (this.scrollY >= 560) scrollup.classList.add('show-scroll');
+  else scrollup.classList.remove('show-scroll');
 }
 window.addEventListener('scroll', scrollUp);
 
