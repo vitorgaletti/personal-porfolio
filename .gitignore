@@ -1,6 +1,7 @@
 node_modules/
-.yarn
+dist/
 .editorconfig
 .eslintignore
 .prettierrc
 .eslintrc.json
+.htmlnanorc.js

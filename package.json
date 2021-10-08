@@ -2,20 +2,23 @@
   "packageManager": "yarn@3.0.2",
   "name": "yarn",
   "version": "1.0.0",
-  "main": "index.js",
+  "default": "index.html",
   "repository": "https://github.com/vitorgaletti/personal-porfolio.git",
   "author": "vitorgaletti <vitor.fgaletti@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "yarn live-server"
+    "start": "yarn live-server",
+    "build": "parcel build index.html --dist-dir ./dist"
   },
   "devDependencies": {
+    "@parcel/transformer-image": "^2.0.0-rc.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-prettier": "^4.0.0",
     "live-server": "^1.2.1",
+    "parcel": "^2.0.0-rc.0",
     "prettier": "^2.4.1"
   }
 }
