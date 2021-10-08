@@ -1,0 +1,5 @@
+node_modules
+/dist
+swiper-bundle.min.js
+webpack.dev.js
+webpack.prod.js
